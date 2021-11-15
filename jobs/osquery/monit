@@ -1,0 +1,5 @@
+check process osquery
+  with pidfile /var/vcap/sys/run/osquery/osquery.pid
+  start program "/var/vcap/jobs/osquery/bin/osqueryctl start"
+  stop program "/var/vcap/jobs/osquery/bin/osqueryctl stop"
+  group vcap

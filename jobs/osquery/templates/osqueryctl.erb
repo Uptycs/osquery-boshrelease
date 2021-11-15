@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -e
+
+RUN_DIR=/var/vcap/sys/run/osquery
+LOG_DIR=/var/vcap/sys/log/osquery
+PID_FILE=$RUN_DIR/osquery.pid
+
+case "$1" in
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR
+    chown -R vcap:vcap $RUN_DIR $LOG_DIR
+
+    exec /var/vcap/packages/osquery/bin/osqueryd \
+        --flagfile=/var/vcap/jobs/osquery/config/osquery.flags \
+        --tls_server_certs=/var/vcap/jobs/osquery/config/ca.crt \
+        --enroll_secret_path=/var/vcap/jobs/osquery/config/uptycs.secret \
+        --augeas_lenses=/var/vcap/jobs/osquery/config/lenses \
+        --ebpf_program_location=/var/vcap/packages/osquery/bin/bpf_progs.o \
+        --database_path=/var/vcap/data/osquery/osquery.db \
+        --logger_path=$LOG_DIR \
+        --pidfile=$PID_FILE \
+        >> $LOG_DIR/osquery.log \
+        2>> $LOG_DIR/osquery.stderr.log
+    ;;
+  stop)
+    kill `cat $PID_FILE`
+    rm -f $PID_FILE
+    ;;
+  *)
+    echo "Usage: $0 {start|stop}"
+    ;;
+esac
+
+exit 0
