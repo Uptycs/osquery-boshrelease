@@ -1,0 +1,6 @@
+---
+name: osquery
+
+files:
+- osquery/osquery-5.0.2.9-Uptycs-202111112102.deb   # https://uptycs-apt-w2-2.s3.us-west-2.amazonaws.com/osquery/5.0.2.9-Uptycs/osquery-5.0.2.9-Uptycs-202111112102.deb
+- osquery/osquery-5.0.2.9-Uptycs-202111112102.rpm  # https://uptycs-apt-w2-2.s3.us-west-2.amazonaws.com/osquery/5.0.2.9-Uptycs/osquery-5.0.2.9-Uptycs-202111112102.rpm

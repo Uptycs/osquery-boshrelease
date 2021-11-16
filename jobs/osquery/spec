@@ -1,9 +1,20 @@
 ---
+
 name: osquery
 
+description: Uptycs Osquery Agent
+
+packages:
+- osquery
+
 templates:
-  osqueryctl.erb: bin/osqueryctl
+  bin/osqueryctl.erb: bin/osqueryctl
+  config/ca.crt.erb: config/ca.crt
+  config/osquery.flags.erb: config/osquery.flags
+  config/uptycs.secret.erb: config/uptycs.secret
 
-packages: []
-
-properties: {}
+properties:
+  uptycs.hostname:
+    description: Customer specific Uptycs SaaS platform hostname
+  uptycs.secret:
+    description: Uptycs secret key

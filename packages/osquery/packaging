@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+set -e -x
+
+OSQUERY_VERSION=5.0.2.9-Uptycs-202111112102
+
+KNOWN_DISTRIBUTION="(Debian|Ubuntu|RedHat|CentOS|openSUSE|Amazon|Arista|SUSE)"
+DISTRIBUTION=$(lsb_release -d 2>/dev/null | grep -Eo ${KNOWN_DISTRIBUTION} || grep -Eo ${KNOWN_DISTRIBUTION} /etc/issue 2>/dev/null || grep -Eo ${KNOWN_DISTRIBUTION} /etc/Eos-release 2>/dev/null || uname -s)
+
+if [ -f /etc/debian_version -o "${DISTRIBUTION}" == "Debian" -o "${DISTRIBUTION}" == "Ubuntu" ]; then
+    OS="Debian"
+elif [ -f /etc/redhat-release -o "${DISTRIBUTION}" == "RedHat" -o "${DISTRIBUTION}" == "CentOS" -o "${DISTRIBUTION}" == "Amazon" ]; then
+    OS="RedHat"
+else
+    echo "Distribution is not supported: ${KNOWN_DISTRIBUTION}"
+    exit 1
+fi
+
+echo "Extracting package in ${BOSH_INSTALL_TARGET}"
+mkdir -p ${BOSH_INSTALL_TARGET}/config
+
+mkdir ./tmp
+
+if [ "${OS}" == "Debian" ]; then
+    dpkg -x osquery/osquery-${OSQUERY_VERSION}.deb ./tmp
+else
+    pushd ./tmp
+        rpm2cpio ../osquery/osquery-${OSQUERY_VERSION}.rpm | cpio -idmv --no-absolute-filenames
+    popd
+fi
+
+cp -r ./tmp/bin ${BOSH_INSTALL_TARGET}/
+cp ./tmp/etc/* ${BOSH_INSTALL_TARGET}/config/
+cp -r ./tmp/usr/share/osquery/lenses ${BOSH_INSTALL_TARGET}/config/
+
+rm -rf ./tmp

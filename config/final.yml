@@ -1,1 +1,7 @@
-name: osquery-boshrelease
+---
+
+blobstore:
+  provider: local
+  options:
+    blobstore_path: blobstore
+final_name: osquery
