@@ -4,5 +4,5 @@ final_name: osquery
 blobstore:
   provider: s3
   options:
-    bucket_name: uptycs-osquery-boshrelease
+    bucket_name: uptycs-osquery-bosh
     region: us-west-2
