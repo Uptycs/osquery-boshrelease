@@ -1,0 +1,17 @@
+name: osquery
+version: 5.0.2.9-Uptycs-202111112102
+commit_hash: ebc84ed
+uncommitted_changes: false
+jobs:
+- name: osquery
+  version: c5b6d90efa9a1ed51a21ed2cde505c89fb3a044d253b2d2511a9e35322ff5f96
+  fingerprint: c5b6d90efa9a1ed51a21ed2cde505c89fb3a044d253b2d2511a9e35322ff5f96
+  sha1: sha256:be90783ae58c2e70bcd9022b3556f0dbd64d361d82cc7202bc379dcc6d8bf8b9
+  packages:
+  - osquery
+packages:
+- name: osquery
+  version: 31e9a85405c4c26e8b86a804ef84b58bf309ea3c0283d3f319ca4d07277c706c
+  fingerprint: 31e9a85405c4c26e8b86a804ef84b58bf309ea3c0283d3f319ca4d07277c706c
+  sha1: sha256:52119b23784d19eca4856bc8b8ffee89d4973120b049c9f07cc68c3e13c3199a
+  dependencies: []

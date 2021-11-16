@@ -1,6 +1,8 @@
 osquery/osquery-5.0.2.9-Uptycs-202111112102.deb:
   size: 14466302
+  object_id: 019fd5c0-5392-4660-6b07-3c4929509706
   sha: sha256:51fbd14dd04de588047d378f07818f29e87b4d2e4223cfef5892ab04d8a725d8
 osquery/osquery-5.0.2.9-Uptycs-202111112102.rpm:
   size: 14387280
+  object_id: 6143c159-12a3-47ed-7dc2-e811540a925a
   sha: sha256:3e91a93618c25b47060fb8f7b5dcf22ba558285cd8a0ab3d5e4ada60ba8741ca
