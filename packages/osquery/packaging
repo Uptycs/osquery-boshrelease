@@ -30,7 +30,7 @@ else
 fi
 
 cp -r ./tmp/usr/bin ${BOSH_INSTALL_TARGET}/
-cp ./tmp/etc/* ${BOSH_INSTALL_TARGET}/config/
+cp ./tmp/usr/share/osquery/ebpf_offsets.json ${BOSH_INSTALL_TARGET}/config/
 cp -r ./tmp/usr/share/osquery/lenses ${BOSH_INSTALL_TARGET}/config/
 
 rm -rf ./tmp

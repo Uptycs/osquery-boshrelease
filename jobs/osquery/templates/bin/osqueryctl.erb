@@ -17,6 +17,7 @@ case "$1" in
         --enroll_secret_path=/var/vcap/jobs/osquery/config/uptycs.secret \
         --augeas_lenses=/var/vcap/jobs/osquery/config/lenses \
         --ebpf_program_location=/var/vcap/packages/osquery/bin/bpf_progs.o \
+        --ebpf_default_offsets=/var/vcap/jobs/osquery/config/ebpf_offsets.json \
         --database_path=/var/vcap/data/osquery/osquery.db \
         --logger_path=$LOG_DIR \
         --pidfile=$PID_FILE \
