@@ -1,17 +1,21 @@
 name: osquery
 version: 5.0.2.9-Uptycs-202111112102
-commit_hash: ebc84ed
-uncommitted_changes: false
+commit_hash: b7ff8c7
+uncommitted_changes: true
 jobs:
 - name: osquery
   version: c5b6d90efa9a1ed51a21ed2cde505c89fb3a044d253b2d2511a9e35322ff5f96
   fingerprint: c5b6d90efa9a1ed51a21ed2cde505c89fb3a044d253b2d2511a9e35322ff5f96
-  sha1: sha256:be90783ae58c2e70bcd9022b3556f0dbd64d361d82cc7202bc379dcc6d8bf8b9
+  sha1: sha256:efaae819156d7d74c8a27f4745259bfefbe7a4411a56f73a672adb93806053c9
   packages:
   - osquery
 packages:
 - name: osquery
-  version: 31e9a85405c4c26e8b86a804ef84b58bf309ea3c0283d3f319ca4d07277c706c
-  fingerprint: 31e9a85405c4c26e8b86a804ef84b58bf309ea3c0283d3f319ca4d07277c706c
-  sha1: sha256:52119b23784d19eca4856bc8b8ffee89d4973120b049c9f07cc68c3e13c3199a
+  version: 28d56b52bc17109a0eba1e265ef4f55efba04e0da4f556945ae9f52571e6ffc2
+  fingerprint: 28d56b52bc17109a0eba1e265ef4f55efba04e0da4f556945ae9f52571e6ffc2
+  sha1: sha256:78a59cb6817a732e1c76af8ba96c09db278e2d1724b0f2726e25b2666b447577
   dependencies: []
+license:
+  version: 49fbaeb620f2c5c0be363960c509729fdbcdd7658941295c0a3aa2157e84a457
+  fingerprint: 49fbaeb620f2c5c0be363960c509729fdbcdd7658941295c0a3aa2157e84a457
+  sha1: sha256:9877f0bcf4ee059c2ce2bf667ead9687b1a27cc8a829540b128c7f34d213b0b6

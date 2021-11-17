@@ -29,7 +29,7 @@ else
     popd
 fi
 
-cp -r ./tmp/bin ${BOSH_INSTALL_TARGET}/
+cp -r ./tmp/usr/bin ${BOSH_INSTALL_TARGET}/
 cp ./tmp/etc/* ${BOSH_INSTALL_TARGET}/config/
 cp -r ./tmp/usr/share/osquery/lenses ${BOSH_INSTALL_TARGET}/config/
 
